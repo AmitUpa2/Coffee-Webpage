@@ -10,12 +10,14 @@
 body{
     height: 100vh;
     background: url('hero-bg.jpg');
-    background-position: center;
+    background-position:center;
     background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 
 header{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -31,18 +33,19 @@ header .navbar{
 }
 
 .navbar .logo{
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 600;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
 }
-.navbar .logo span{
-    font-size: 1.5rem;
-   color: #c0683e;
+.navbar .logo img{
+    width: 110%;
 }
 
 .navbar .menu-links{
     display: flex;
     gap: 40px;
+    margin-bottom: 30px;
 
 }
 
@@ -50,6 +53,8 @@ header .navbar{
     color: #fff;
     text-decoration: none;
     transition: 0.2s ease;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 .navbar a:hover{
     color: #ffa67d;
@@ -57,7 +62,7 @@ header .navbar{
 }
 
 .hero-section{
-    height: 100vh;
+    height: 98vh;
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -90,14 +95,130 @@ header .navbar{
   font-weight: 500;
   margin-top: 30px;
   padding: 12px 30px;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.3s ease-in-out;
 }
 
 .hero-section .content button:hover{
     color: #fff;
     background-color: rgb(116, 111, 111);
+}
+
+
+.container{
+    background-color: #181717;
+}
+
+.container .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.container .row .col{
+    width: 270px;
+    background-color: #181717;
+    padding: 40px 25px;
+    border: 1px solid transparent;
+}
+.container .row .col img{
+    width: 102%;
+    margin-top: 15px;
+    
+}
+.container .row .col h2{
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #f9f5f5;
+    margin-top: 10px;
+}
+.container .row .col p{
+    font-size: 1.1rem;
+    color:#ccc ;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.container .row .col a{
+    font-size: 1rem;
+    color: white;
+    border: 2px solid #c0683e;
+    padding: 6px 20px;
+    border-radius: 2px;
+}
+.container .row .col a:hover{
+    background-color: #c0683e;
+    color: black;
+    cursor: pointer;
+    transition:  0.5s ease-in-out;
+    font-weight:bold;
+}
+
+.footer{
+    width: 100vw;
+    background: #1a1919;
+    padding: 20px;
+
+ }
+ .footer .container{
+    width: 90vw;
+    padding: 60px;
+    margin: 0 auto;
+ }
+ .footer .container .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+ }
+ .footer .container .row .footer-links{
+    width: 260px;
+    margin: 0 20px;
+    margin-bottom: 30px;
+ }
+ .footer .container .row .footer-links div{
+   margin-bottom: 25px;
+   margin-top: 15px;
+   font-size: 1.1rem;
+   font-weight: 600;
+   color: #fff;
+ }
+ .footer .container .row .footer-links li{
+    list-style: none;
+    margin: 14px 0;
+}
+.footer .container .row .footer-links li a{
+   text-decoration: none;
+   color: #ccc;
+   font-size: 0.9rem;
+}
+.footer .container .row .footer-links li a:hover{   
+    color: #e1a012;
+ }
+
+ .footer .container .row .footer-links .social-links{   
+    margin-top: 40px;
+ }
+ .footer .container .row .footer-links .social-links a{   
+   text-decoration: none;
+   color: #dfdede;
+   margin-right: 15px;
+   font-size: 1.2rem;
+}
+
+.copyright{
+    padding: 14px 0;
+    text-align: center;
+}
+.copyright p{
+    color: #ccc;
+    font-size: 0.9rem;
+}
+hr{
+    border: 1px solid #575656;
 }
 
 
@@ -113,7 +234,6 @@ header .navbar{
     top: 20px;
     cursor: pointer;
 }
-
 
 
 @media screen and (max-width: 900px) {
@@ -135,6 +255,7 @@ header .navbar{
         display: block;
     }
     .navbar .menu-links{
+ 
         position: fixed;
         left: -260px;
         top: 0;
